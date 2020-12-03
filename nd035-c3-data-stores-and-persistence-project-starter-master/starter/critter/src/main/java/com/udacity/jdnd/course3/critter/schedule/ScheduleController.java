@@ -90,6 +90,7 @@ public class ScheduleController {
 
     private ScheduleDTO convertToDto(Schedule schedule) {
         ScheduleDTO scheduleDTO = modelMapper.map(schedule, ScheduleDTO.class);
+        scheduleDTO.setDate(schedule.getDateTime());
         List<Long> petIds = new ArrayList<>();
         List<Pet> pets = schedule.getPets();
         List<Long> employeeIds = new ArrayList<>();
@@ -108,6 +109,7 @@ public class ScheduleController {
 
     private Schedule convertToEntity(ScheduleDTO scheduleDTO) {
         Schedule schedule = modelMapper.map(scheduleDTO, Schedule.class);
+        schedule.setDateTime(scheduleDTO.getDate());
         List<Pet> pets = new ArrayList<>();
         List<Long> petIds = scheduleDTO.getPetIds();
         List<Employee> employees = new ArrayList<>();
