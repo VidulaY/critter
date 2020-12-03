@@ -39,7 +39,7 @@ public class EmployeeService {
         List<Employee> employees = getAllEmployees();
         List<Employee> employeesList = new ArrayList<>();
         for(Employee employee : employees){
-            if(employee.getSkills().containsAll(requiredSkills) && employee.getDaysAvailable().contains(requiredDate))
+            if(employee.getSkills().containsAll(requiredSkills) && employee.getDaysAvailable().contains(requiredDate.getDayOfWeek()))
                 employeesList.add(employee);
         }
         return employeesList;

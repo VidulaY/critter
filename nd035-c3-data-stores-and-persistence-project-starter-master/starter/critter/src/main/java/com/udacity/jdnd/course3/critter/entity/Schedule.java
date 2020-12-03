@@ -3,6 +3,7 @@ package com.udacity.jdnd.course3.critter.entity;
 import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
@@ -14,7 +15,7 @@ public class Schedule {
     @GeneratedValue
     private Long id;
 
-    private LocalDateTime dateTime;
+    private LocalDate date;
 
     @ManyToMany
     @JoinTable(
@@ -43,12 +44,12 @@ public class Schedule {
         this.id = id;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDate getDateTime() {
+        return date;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDateTime(LocalDate date) {
+        this.date = date;
     }
 
     public List<Employee> getEmployees() {

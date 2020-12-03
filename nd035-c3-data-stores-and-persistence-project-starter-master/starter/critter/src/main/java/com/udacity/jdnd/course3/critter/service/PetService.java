@@ -15,8 +15,13 @@ public class PetService {
     @Autowired
     PetRepository petRepository;
 
+    @Autowired
+    CustomerService customerService;
+
     public Pet savePet(Pet pet){
-        return petRepository.save(pet);
+        pet = petRepository.save(pet);
+        customerService.addPetToCustomer(pet, pet.getCustomer());
+        return pet;
     }
 
     public List<Pet> findAllPets(){
