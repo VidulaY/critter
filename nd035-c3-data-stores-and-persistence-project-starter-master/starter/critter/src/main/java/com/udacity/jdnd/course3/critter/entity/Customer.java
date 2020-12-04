@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 public class Customer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Nationalized

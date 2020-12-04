@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Critter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CritterChronologer" vcs="Git" />
   </component>
 </project>

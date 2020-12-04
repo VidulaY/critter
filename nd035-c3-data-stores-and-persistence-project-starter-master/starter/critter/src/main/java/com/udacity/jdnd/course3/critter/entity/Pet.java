@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Entity
 public class Pet {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private PetType type;
